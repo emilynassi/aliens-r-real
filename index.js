@@ -29,6 +29,8 @@ function renderTable() {
     var fields = Object.keys(sighting);
     // Create a new row in the tbody, set the index to be i + startingIndex
     var $row = $tbody.insertRow(i);
+    $row.className = "rowdiv";
+
 
     // Paginate every 50 rows
     if (i % 50 === 0 && i !== 0) {
@@ -52,7 +54,7 @@ function renderTable() {
 
 // Run this to get current page and hide/show DOM elements based on that output
 function displayPage() {
-  var tableRows = document.querySelectorAll('tr');
+  var tableRows = document.getElementsByClassName('rowdiv');
   console.log('itsme');
   console.dir(tableRows)
   for (var i = 0; i < tableRows.length; i++) {
